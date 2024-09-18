@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm Sorry</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; 
+    }
+    .page {
+        display: none;
+        padding: 20px;
+        max-height: 100vh; 
+        overflow-y: auto;  
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .page.active {
+        display: block;
+    }
+    h1, h2 {
+      color: #ff6347;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    img {
+        width: 300px;
+        height: auto; 
+        margin: 20px 0;
+    }
+    button {
+      background-color: #ff6347;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 20px 0;
+    }
+    button:hover {
+      background-color: #ff4500;
+    }
+    .heart {
+    position: absolute;
+    font-size: 50px; 
+    color: red;
+    animation: float 7s ease-in-out infinite;
+    line-height: 1; 
+  }
+
+    
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(20vw);
+        opacity: 0;
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      h1, h2 {
+        font-size: 18px;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      button {
+        width: 100%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="background-audio" loop>
+    <source src="Taylor_Swift_-_This_Is_Me_Trying.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <!-- Heart Animation -->
+  <div class="heart" style="left: 10%; animation-duration: 6s;">❤️</div>
+  <div class="heart" style="left: 50%; animation-duration: 8s;">❤️</div>
+  <div class="heart" style="left: 70%; animation-duration: 7s;">❤️</div>
+  <div class="heart" style="left: 90%; animation-duration: 9s;">❤️</div>
+
+  <!-- Page 1 -->
+  <div id="page1" class="page active">
+    <h1>I'm Sorry, Ha Anh</h1>
+    <p>I hurt you, and I deeply regret it.</p>
+    <button onclick="nextPage(2)">Swipe/Click Please</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div id="page2" class="page">
+    <h2>I've been reflecting on what happened...</h2>
+    <img src="portrait3.jpg" alt="Minh's Image">
+    <p>I realize now how my actions affected you, and I’m genuinely sorry for the hurt I caused.</p>
+    <button onclick="nextPage(3)">Next</button>
+  </div>
+
+  <!-- Page 3 -->
+  <!-- <div id="page3" class="page">
+    <h2>You're important to me...</h2>
+    <p>Your trust means the world to me, and I understand how fragile it is. I didn’t honor that trust, and I am truly sorry.</p>
+    <button onclick="nextPage(4)">Next</button>
+  </div> -->
+  <div id="page3" class="page">
+    <h2>Remember the Good Times We've Shared...</h2>
+    <img src="donchicken.jpg" alt="Good Memory Image 1">
+    <p>Remember when we went to the escape room and solved the puzzles together? We made an awesome team.</p>
+    <p>Also, these chickens were too much...</p>
+    <button onclick="nextPage(4)">Next</button>
+  </div>
+  
+  <!-- Page 4 (Good Memory 2) -->
+  <div id="page4" class="page">
+    <h2>The time we spent at Da Lat...</h2>
+    
+    <!-- First Image -->
+    <img src="Dalat1.jpg" alt="Dalat_polaroid">
+    <img src="Dalat_polaroid.jpg" alt="Dalat_polaroid">
+    <p>I could never forget about the time we spent at Da Lat</p>
+  
+    <!-- Second Image -->
+    <img src="Dalat_cook.jpg" alt="Dalat_cook">
+    <p>This is the first I ever cooked for you and I really liked it when you enjoyed my foods</p>
+  
+    <!-- Third Image -->
+    <img src="Dalat2jpg.jpg" alt="Laughing Memory">
+    <p>We had so much fun those days. I loved how your smile brightened my day.</p>
+  
+    <button onclick="nextPage(5)">Next</button>
+  </div>
+  
+  <!-- Page 5 (Good Memory 3) -->
+  <div id="page5" class="page">
+    <h2>Our Disney Trip</h2>
+    <img src="Disney.jpg" alt="Good Memory Image 3">
+    <p>That crazy day when we had so much fun at DisneyLand.</p>
+    <p>We had so many fun rides togethers, and bought so many souvenirs</p>
+    <button onclick="nextPage(6)">Next</button>
+  </div>
+
+  <!-- Page 6 -->
+  <div id="page6" class="page">
+    <h2>What I want to say...</h2>
+    <img src="important.jpg" alt="Minh's Image">
+    <p>I know words alone aren't enough, but I want you to know that I will work to regain your trust and prove how much you mean to me.</p>
+    <button onclick="nextPage(7)">Next</button>
+  </div>
+
+  <!-- Page 7 -->
+  <div id="page7" class="page">
+    <h2>Dear Ha Anh,</h2>
+    <p>I want to start by again saying how truly sorry I am for my actions and how deeply I regret the hurt I caused you. I know that no words can undo the pain I have caused, but I want you to know that I am writing this letter with nothing but sincerity and remorse.</p>
+    <p>I’ve had time to reflect on what happened, and I realize now more than ever how my actions affected you. It was never my intention to hurt you, and I deeply regret that I did. You mean so much to me, and I understand how important trust is in any relationship. I broke that trust, and I fully take responsibility for my mistakes.</p>
+    <p>I want to be better, not just in words but in actions. I am committed to changing and growing from this, and I want to work towards earning back your trust and rebuilding what was damaged. I know this will take time, and I don’t expect forgiveness to come easily, but I want you to know that I am willing to put in the effort because you are worth it.</p>
+    <p>Please know that I will do everything in my power to ensure this doesn’t happen again. I’ve learned from this, and I am determined to be the person you can rely on and trust once more.</p>
+    <p>Thank you for taking the time to read this. I truly hope you can find it in your heart to forgive me one day. Regardless of how long it takes, I am here, ready to work on things, because I care about you deeply.</p>
+    <p>With all my sincerity,<br>Minh Vu</p>
+    <button onclick="nextPage(8)">Next</button>
+  </div>
+
+  <!-- Page 8 -->
+  <div id="page8" class="page">
+    <h2>I hope you can forgive me...</h2>
+    <img src="heart.jpg" alt="Minh's Image">
+    <p>My actions won’t change overnight, but I promise you’ll see the difference because I want to make things right for us.</p>
+    <button onclick="nextPage(1)">Thank you for reading❤️</button>
+  </div>
+
+  <!-- Page Transitions Script -->
+  <script>
+    function nextPage(pageNumber) {
+      // Hide all pages
+      var pages = document.querySelectorAll('.page');
+      pages.forEach(function(page) {
+        page.classList.remove('active');
+      });
+      
+      // Show the next page
+      var nextPage = document.getElementById('page' + pageNumber);
+      nextPage.classList.add('active');
+    }
+  </script>
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var audio = document.getElementById('background-audio');
+      audio.play().catch(function(error) {
+        console.log('Playback was prevented:', error);
+        // Provide a manual play button if autoplay fails
+        var playButton = document.createElement('button');
+        playButton.textContent = 'Play Music';
+        playButton.addEventListener('click', function() {
+          audio.play().catch(console.error);
+        });
+        document.body.appendChild(playButton);
+      });
+    });
+  </script>
+</body>
+</html>
